@@ -1,0 +1,796 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,amssymb,enumitem}
+\usepackage[margin=1in]{geometry}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.7em}
+
+\title{\textbf{Intro to Probability Notes}\\[0.3em]
+\large William Feller}
+\author{Aadhita Datta}
+\date{May 26, 2026}
+
+\begin{document}
+
+\maketitle
+
+\section*{Chapter 1}
+
+\section*{1.1 The Sample Space}
+
+\textbf{Definition.}
+
+The results of experiments or observations are called events. Any theory involves idealization, meaning that we ask what the possible outcomes of the experiment or observation are. We must decide what constitutes possible outcomes of our idealized experiment.
+
+\textbf{Example.}
+
+If we are tracking the age of a species, say humans, we may assume that the maximum age is 100 and all results must lie between 0 and 100. However, current actuarial practice admits that there is no bound to the duration of life. Here we need an idealized set of outcomes in which we may assume that the maximum age is 130 years old.
+
+\textbf{Definition.}
+
+\begin{itemize}
+    \item \textbf{Compound Event} (or decomposable): The aggregate of certain simple events.
+
+    \item \textbf{Simple Event} (or indecomposable): Also called sample points or points. Every indecomposable result is represented by one and only one point.
+\end{itemize}
+
+The aggregate of all sample points is called the \textbf{sample space}.
+
+\textbf{Example.}
+
+Consider the age of a person. The statement ``this person is in their fifties'' implies their age is between 50 and 60 (compound event). This can be decomposed into simple events
+
+\[
+50,51,52,\ldots,60.
+\]
+
+Each number is a simple event and their aggregate forms the compound event.
+
+\textbf{Definition.}
+
+\textbf{Phase Space:} In statistical mechanics, phase space is simply our sample space. Its points are our sample points.
+
+\section*{1.2 The Sample Space. Events}
+
+\textbf{Definition.}
+
+An event consists of certain points in the sample space.
+
+A sample point is an individual outcome, whereas an event is a collection (set) of sample points.
+
+\textbf{Examples.}
+
+\begin{itemize}
+    \item Tossing three coins:
+    \[
+    \Omega=\{HHH,HHT,HTH,HTT,THH,THT,TTH,TTT\}.
+    \]
+
+    \item Rolling a die:
+    \[
+    \Omega=\{1,2,3,4,5,6\}.
+    \]
+
+    \item A point \((x,y)\) may represent the ages of a husband and wife.
+\end{itemize}
+
+\textbf{Notation.}
+
+\[
+x\in A
+\]
+
+means the sample point \(x\) belongs to event \(A\).
+
+\[
+x\in\Omega
+\]
+
+means \(x\) belongs to the sample space.
+
+\textbf{Remark.}
+
+An event may be described either by listing all of its sample points or by specifying a condition that determines them.
+
+\section*{1.3 The Sample Space. Events}
+
+\textbf{Definition.}
+
+An event \(A\) is said to occur when the observed sample point belongs to \(A\).
+
+The occurrence of an event is therefore determined entirely by whether the realized sample point lies in the corresponding set.
+
+\textbf{Examples.}
+
+For a die roll:
+
+\[
+U=\{\text{odd numbers}\}
+\]
+
+or
+
+\[
+U=\{1,3,5\}.
+\]
+
+The same event may be described by a condition or by explicitly listing its points.
+
+\textbf{Remark.}
+
+Probability theory studies events, which mathematically are simply sets of sample points.
+
+\section*{1.4 Relations Among Events}
+
+\textbf{Definition 1.}
+
+Two events are equal if they contain exactly the same sample points.
+
+\[
+A=B.
+\]
+
+\textbf{Definition 2.}
+
+The complement (or negation) of an event \(A\) is the event consisting of all sample points not contained in \(A\).
+
+\[
+A^c=\Omega\setminus A.
+\]
+
+\textbf{Definition 3.}
+
+The intersection of events \(A\) and \(B\) is the event that both occur.
+
+\[
+A\cap B.
+\]
+
+Feller frequently denotes this by
+
+\[
+AB.
+\]
+
+If
+
+\[
+AB=\varnothing,
+\]
+
+then \(A\) and \(B\) are said to be \textbf{mutually exclusive}.
+
+\textbf{Definition 4.}
+
+The union of events \(A\) and \(B\) is the event that at least one of them occurs.
+
+\[
+A\cup B.
+\]
+
+\textbf{Definition 5.}
+
+Event \(A\) is contained in event \(B\) if every sample point of \(A\) belongs to \(B\).
+
+\[
+A\subseteq B.
+\]
+
+Equivalently,
+
+\[
+B\supseteq A.
+\]
+
+If
+
+\[
+A\subseteq B,
+\]
+
+then the occurrence of \(A\) implies the occurrence of \(B\).
+
+\textbf{Definition 6.}
+
+Two events are equivalent if
+
+\[
+A\subseteq B
+\]
+
+and
+
+\[
+B\subseteq A.
+\]
+
+In this case,
+
+\[
+A=B.
+\]
+
+\textbf{Geometric Interpretation.}
+
+Events may be represented as regions in the plane.
+
+If \(x\) denotes the husband's age and \(y\) denotes the wife's age:
+
+\[
+x\ge 40
+\]
+
+represents the event ``the husband is older than 40.''
+
+\[
+x>y
+\]
+
+represents the event ``the husband is older than his wife.''
+
+The event
+
+\[
+x\ge40 \quad \text{and} \quad x>y
+\]
+
+is represented by the intersection of the two corresponding regions.
+
+\section*{1.5 Discrete Sample Spaces}
+The simplest of sample spaces are one with finite number of points. 
+
+\textbf{Definition.}
+A sample space is called discrete if it has finite or infinite amount of points where the points can be arranged into a simple sequence E1, E2, ...
+
+\section*{1.6 Probabilities In Discrete Sample Spaces: Preparations}
+Probability models are idealized descriptions of random phenomena. The same sample space may admit different probability assignments depending on the assumptions of the model. Experimental data fluctuate naturally, so agreement between theory and observation must be judged using statistical methods rather than intuition alone.
+
+\section*{1.7 Basic Definitions and Rules}
+
+\textbf{Fundamental Convention.}
+Each sample point \(E_i\) is assigned a nonnegative probability \(P(E_i)\) such that
+
+\[
+P(E_1)+P(E_2)+P(E_3)+\cdots = 1.
+\tag{7.1}
+\]
+
+The probability of an event \(A\) is defined as the sum of the probabilities of all sample points contained in \(A\).
+
+Since the probability of the entire sample space is 1, every event satisfies
+
+\[
+0 \le P(A) \le 1.
+\tag{7.2}
+\]
+
+\textbf{Addition Rule.}
+For two events \(A_1\) and \(A_2\),
+
+\[
+P(A_1 \cup A_2)
+=
+P(A_1)+P(A_2)-P(A_1\cap A_2).
+\tag{7.4}
+\]
+
+The intersection term is subtracted because outcomes contained in both events are counted twice when \(P(A_1)\) and \(P(A_2)\) are added.
+
+\textbf{Mutually Exclusive Events.}
+If
+
+\[
+A_1\cap A_2=\varnothing,
+\]
+
+then the events cannot occur simultaneously and
+
+\[
+P(A_1\cup A_2)
+=
+P(A_1)+P(A_2).
+\tag{7.5}
+\]
+
+\textbf{Boole's Inequality.}
+For any collection of events,
+
+\[
+P(A_1\cup A_2\cup \cdots)
+\le
+P(A_1)+P(A_2)+\cdots.
+\tag{7.6}
+\]
+
+If the events are mutually exclusive, equality holds:
+
+\[
+P(A_1\cup A_2\cup \cdots)
+=
+P(A_1)+P(A_2)+\cdots.
+\tag{7.7}
+\]
+
+\textbf{Key Idea.}
+Probability is assigned to sample points first, and the probability of an event is obtained by summing the probabilities of all sample points belonging to that event. Feller emphasizes that probability should not be defined solely as
+
+\[
+P(A)=\frac{\text{favorable cases}}{\text{total cases}},
+\]
+
+because many important applications involve sample points that are not equally likely.
+
+\section*{1.8 Problems For Solution}
+\textbf{Problem 1.} 
+Among the digits 1,2,3,4,5, first one is chosen, and then a second selection is made among the remaining four digits. Assume that all twenty possible results have the same probability. Find the probability that an odd digit will be selected
+
+(a) the first time,
+
+(b) the second time,
+
+(c) both times.
+
+\textbf{Solution.} 
+Digits 1,2,3,4,5 are given.
+For the first number there are 5 options and the second there are 4 thus we have 5*4 = 20 total outcomes which is the sample space
+
+(a) Then if an odd digit is the chosen digit in the first place then we have 4 digits to choose from in the second thus we have 4/20 = 1/5 probability of a specific odd digit being selected the first time. In total then we would have a 3/5 probability of any odd digit being chosen in the first place.
+
+(b) By symmetry the second position is equally likely to contain an odd digit thus 3/5 probability. 
+
+(c) Say we choose an odd digit for the first position now out of the 4 choices only 2 are odd thus our probability for getting two odd digits is 2/20 = 1/10 so for to get odd numbers both times for any odd numbers we have 3/10 probability.  
+
+\textbf{Problem 2.} Three distinguishable balls are distributed among three cells. Assume that all
+\(27\) possible outcomes are equally likely.
+
+Let
+
+\[
+S_1 = \{\text{ball 1 is in cell 1}\},
+\]
+
+and
+
+\[
+S_2 = \{\text{ball 2 is in cell 1}\}.
+\]
+
+Verify the addition formula
+
+\[
+P(S_1 \cup S_2)
+=
+P(S_1)
++
+P(S_2)
+-
+P(S_1 \cap S_2).
+\]
+
+How many sample points does
+
+\[
+S_1 \cap S_2
+\]
+
+contain?
+
+\textbf{Solution.}
+Since ball 1 has three options and ball 2 also has three options and ball 3 has three options for cells. 
+
+Thus \[\Omega = 3\times3\times3 = 27.\]
+
+The event $S_1$: Now keep ball 1 in cell 1. Then ball 2 still has 3 choices and ball 3 has 3 choices too, thus $3 \times 3 = 9$.
+
+The event $S_2$: Now keeping ball 2 in cell 1 fixed ball 1 and 3 still have the same amount of cells to choose from thus $3 \times 3 = 9$.
+
+Now the event $S_1 \cap S_2$: This means ball 1 and ball 2 are fixed in cell 1 and cell 2 respectively. Ball 3 has 3 choices of cells thus $S_1 \cap S_2$ contains 3 points.
+
+\textbf{Problem 3.}
+Consider the 24 possible arrangements (permutations) of the symbols 1234, each assigned probability \[\frac{1}{24}\]
+Let $A_i$ be the event digit i appeears in its natural position. i = 1,2,3,4. Verify formula \[P(A_i \cup A_j) = P(A_i) + P(A_j) - P(A_i \cap A_j)\] 
+
+\textbf{Solution.}
+Consider as an example 1 is fixed in its natural position. Then the other three digits are left so there are only 3! combinations of the 3 other digits that means when 1 is fixed there are only 6 such permutations. 6/24 = 1/4 chance. Extending it to any other number being fixed one number being fixed is a 1/4 chance. If we were to talk 2 numbers to be fixed 2 other numbers are left leaving us 2 permutations. meaning a 2/24=1/12 chance. To verify the formula then the chance of any two numbers fixed is 1/4 + 1/4 - 1/12 = 5/12 the probability that at least one of two chosen numbers is fixed in its natural position. 
+
+\textbf{Problem 4.}
+A coin is tossed until the first time the same result appears twice in succession. To every possible outcome requiring n tosses attribute \[\frac{1}{2^{n-1}}\].Describe the sample space. Find the probability of the following events 
+
+(a) the experiment ends before the sixth toss
+
+(b) an even number of tosses is required
+
+\textbf{Solution.}
+The tossing ends when there are two of the same result in succession. Thus to keep going we need the results to alternate. 
+
+\[S = \{HH, TT, HTT, THH, HTHH, THTT,...\}\]
+For every  \(n \geq 2\) there are exactly two outcomes requiring \(n\) tosses.
+
+(a) Experiment ends before the sixth toss meaning it ends on the 2, 3, 4, or 5th tosses. So the event that \[P(N < 6) = P(N=2)+P(N=3)+P(N=4)+P(N=5)\].
+
+Using the formula \[\frac{1}{2^{n-1}}\] we get \[P(N=2) = \frac12 \qquad P(N=3) = \frac14 \qquad P(N=4) = \frac18 \qquad P(N=5) = \frac1{16}\]
+
+\[
+P(N<6)
+=
+\frac12+\frac14+\frac18+\frac1{16}
+=
+\frac{15}{16}.
+\]
+
+Thus \[P(N<6) = \frac{15}{16}\]
+
+(b) The experiments end after \[2, 4, 6, 8 ...\] tosses.
+\[
+P(\text{even})
+=
+\frac12+\frac18+\frac1{32}+\frac1{128}+\cdots.
+\]
+
+This is a geometric series. 
+
+\[
+\sum_{k=0}^{\infty} ar^k
+=
+\frac{a}{1-r},
+\]
+
+a = 1/2, r = 1/4
+\[
+P(\text{even})
+=
+\frac{\frac12}{1-\frac14}
+=
+\frac{\frac12}{\frac34}
+=
+\frac23.
+\]
+
+\textbf{Problem 5.} Consider the following game. Letters \(a\), \(b\), and \(c\) are chosen independently with probability \(1/2\) for \(a\) and \(1/4\) each for \(b\) and \(c\). The game continues until one of the letters appears twice. Every outcome consisting of exactly \(k\) letters is assigned probability \(1/2^k\). Thus, for example,
+
+\[
+P(aa)=P(bb)=\frac14,
+\qquad
+P(acb)=\frac18.
+\]
+
+\begin{enumerate}[label=(\alph*)]
+    \item Show that the probabilities of all possible outcomes add up to \(1\).
+
+    \item Show that the probability that \(a\) wins is \(\frac{5}{14}\). Show also that the probability that \(b\) wins is the same, and that \(c\) wins with probability \(\frac{2}{7}\).
+
+    \item Show that the probability that no decision is reached at or before the \(k\)-th turn is
+
+    \[
+    \frac{1}{2^{k-1}}.
+    \]
+\end{enumerate}
+
+\textbf{Solution.}
+The finite outcomes are
+
+\[
+aa,\ bb,\ acc,\ bcc,\ acbb,\ bcaa,\ acbaa,\ bcabb,\ldots
+\]
+
+Since each outcome of length \(k\) is assigned probability
+
+\[
+\frac{1}{2^k},
+\]
+
+the total probability of all outcomes of length \(k\) is
+
+\[
+2\cdot\frac{1}{2^k}
+=
+\frac{1}{2^{k-1}}.
+\]
+
+Therefore the sum of the probabilities of all finite outcomes is
+
+\[
+\sum_{k=2}^{\infty}\frac{1}{2^{k-1}}
+=
+\sum_{n=1}^{\infty}\frac{1}{2^n}
+=
+\frac{\frac12}{1-\frac12}
+=
+1.
+\]
+Hence the probabilities of all finite outcomes add up to \(1\). Therefore the set of infinite outcomes has probability \(0\).
+
+(c)
+\textbf{(c)}
+
+No decision is reached at or before the \(k\)-th game if and only if no player has won two consecutive games during the first \(k\) games.
+
+To avoid a decision, the winners must continue alternating according to the pattern
+
+\[
+a,c,b,a,c,b,\ldots
+\]
+
+or
+
+\[
+b,c,a,b,c,a,\ldots
+\]
+
+Thus there are exactly two possible sequences of length \(k\) for which no decision has yet been reached.
+
+Each such sequence has probability
+
+\[
+\frac{1}{2^k}.
+\]
+
+Therefore
+
+\[
+P(\text{no decision by game }k)
+=
+2\cdot\frac{1}{2^k}
+=
+\frac{1}{2^{k-1}}.
+\]
+
+Hence
+
+\[
+\boxed{
+P(\text{no decision by game }k)
+=
+\frac{1}{2^{k-1}}
+}.
+\]
+
+\textbf{Problem 7.}
+In problem 3 show that $A_1A_2A_3 \subset A_4$ and $A_1A_2A_3' \subset A_4'$
+
+\textbf{Solution.}
+
+Since $A_1A_2A_3$ would mean 1, 2, and 3 would be in their natural positions, it just leaves 4 and since the other three are already positioned, 4 has to also be in its natural position. Thus the only permutation in $A_1A_2A_3$ is
+
+\[
+1234.
+\]
+
+Since $1234 \in A_4$, every element of $A_1A_2A_3$ belongs to $A_4$. Therefore
+
+\[
+A_1A_2A_3 \subset A_4.
+\]
+
+If the event $A_1A_2A_3'$ occurs, then 1 and 2 are in their natural positions, however 3 is definitely not in its natural position. This leaves 3 to be in the position of 4 and 4 to be in the position of 3, giving us
+
+\[
+1243.
+\]
+
+In the permutation $1243$, the digit 4 is not in its natural position, so
+
+\[
+1243 \in A_4'.
+\]
+
+Since every element of $A_1A_2A_3'$ belongs to $A_4'$, we conclude that
+
+\[
+A_1A_2A_3' \subset A_4'.
+\]
+
+\textbf{Problem 9.}
+
+Two dice are thrown. Let $A$ be the event that the sum of the faces is odd,
+$B$ the event of at least one ace. Describe the events.
+
+\[
+AB, \qquad A \cup B, \qquad AB'.
+\]
+
+Find their probabilities assuming that all 36 sample points have equal
+probabilities.
+
+
+\textbf{Solution.}
+The event AB would be described by at least one dice roll giving the result of 1 and another being any even number (since the sum has to be even). Thus (1,2)(1,4)(1,6) are valid points in this event and (2,1)(4,1)(6,1) are also valid points. In total we get 6 points in this event out of the total points in the sample space which is 36. 6/36 = 1/6 is the probability of event AB.
+
+The event $(A \cup B)$ means that either the sum of the faces is odd or at least one ace appears. There are 18 outcomes where the sum of the faces is odd since one die must be odd and the other even. There are 11 outcomes where at least one ace appears. From the previous part we know there are 6 outcomes that belong to both events. Thus using
+
+\[
+P(A \cup B)=P(A)+P(B)-P(AB),
+\]
+
+we get
+
+\[
+\begin{aligned}
+P(A \cup B)
+&= \frac{18}{36}+\frac{11}{36}-\frac{6}{36} \\
+&= \frac{23}{36}.
+\end{aligned}
+\]
+
+Therefore the probability of the event $(A \cup B)$ is
+
+\[
+\frac{23}{36}.
+\]
+ 
+The event $AB'$ means that the sum of the faces is odd and no ace appears. Thus one die must show an odd number and the other an even number, with neither die showing a $1$.
+
+The outcomes are
+
+\[
+(2,3),(2,5),(3,2),(3,4),(3,6),
+\]
+
+\[
+(4,3),(4,5),(5,2),(5,4),(5,6),
+\]
+
+\[
+(6,3),(6,5).
+\]
+
+There are $12$ such outcomes out of the $36$ points in the sample space. Therefore
+
+\[
+P(AB')
+=
+\frac{12}{36}
+=
+\frac13.
+\]
+
+
+\textbf{Problem 12.}
+
+\textit{Bridge} (cf. footnote 1). For $k=1,2,3,4$ let $N_k$ be the event that
+North has at least $k$ aces. Let $S_k$, $E_k$, $W_k$ be the analogous events
+for South, East, West. Discuss the number $x$ of aces in West's possession in
+the events
+
+\begin{enumerate}
+    \item[(a)] $W_1'$
+    \item[(b)] $N_2S_2$
+    \item[(c)] $N_1'S_1'E_1'$
+    \item[(d)] $W_2 - W_3$
+    \item[(e)] $N_1S_1E_1W_1$
+    \item[(f)] $N_3W_1'$
+    \item[(g)] $(N_2 \cup S_2)E_2$.
+\end{enumerate}
+
+\textbf{Solution.}
+\begin{enumerate}
+\item[(a)] The event $W_1'$ means that West does not have at least one ace. Therefore West has no aces. Thus
+
+```
+\[
+x=0.
+\]
+
+\item[(b)] The event $N_2S_2$ means that North has at least 2 aces and South has at least 2 aces. Since there are only 4 aces in the deck, North and South must already possess all 4 aces. Therefore West cannot have any aces and
+
+\[
+x=0.
+\]
+
+\item[(c)] The event $N_1'S_1'E_1'$ means that North, South, and East do not have at least one ace. Therefore North, South, and East each have 0 aces. Since there are 4 aces total, all 4 aces must be with West. Thus
+
+\[
+x=4.
+\]
+
+\item[(d)] The event $W_2-W_3$ means that West has at least 2 aces but does not have at least 3 aces. Therefore West must have exactly 2 aces. Thus
+
+\[
+x=2.
+\]
+
+\item[(e)] The event $N_1S_1E_1W_1$ means that North, South, East, and West each have at least one ace. Since there are only 4 aces in total, each player must have exactly one ace. Therefore
+
+\[
+x=1.
+\]
+
+\end{enumerate}
+
+\textbf{Problem 17.}
+
+Let $A$, $B$, $C$ be three arbitrary events. Find expressions for the events
+that of $A$, $B$, $C$:
+
+\begin{enumerate}
+    \item[(a)] Only $A$ occurs.
+    \item[(b)] Both $A$ and $B$, but not $C$, occur.
+    \item[(c)] All three events occur.
+    \item[(d)] At least one occurs.
+    \item[(e)] At least two occur.
+    \item[(f)] One and no more occurs.
+    \item[(g)] Two and no more occur.
+    \item[(h)] None occurs.
+    \item[(i)] Not more than two occur.
+\end{enumerate}
+
+\textbf{Solution.}
+(a) $AB'C'$
+
+(b) $ABC'$
+
+(c) $ABC$
+
+(d) $A \cup B \cup C$
+
+(e) $AB \cup AC \cup BC$
+
+(f) $AB'C' or A'BC' or A'B'C$
+
+(g) $ABC' \cup AB'C \cup A'BC$
+
+(h) $A'B'C'$
+
+(i) $(ABC)'$
+
+
+\textbf{Problem 19.}
+
+Using the result of Problem 18 prove that
+
+\[
+P\{A \cup B \cup C\}
+=
+P\{A\}
++
+P\{B\}
++
+P\{C\}
+-
+P\{AB\}
+-
+P\{AC\}
+-
+P\{BC\}
++
+P\{ABC\}.
+\]
+
+\textbf{Solution.}
+\[
+\begin{aligned}
+P(A \cup B \cup C)
+&= P((A \cup B) \cup C) \\
+&= P(A \cup B)+P(C)-P((A \cup B)C) \\
+&= P(A \cup B)+P(C)-P((AC)\cup(BC)) \\
+&= P(A \cup B)+P(C)-\bigl(P(AC)+P(BC)-P(ABC)\bigr) \\
+&= P(A)+P(B)-P(AB)+P(C)-P(AC)-P(BC)+P(ABC).
+\end{aligned}
+\]
+
+\hfill [This is a special case of IV, (1.5).]
+
+\section*{Summary of Symbols}
+
+\begin{center}
+\begin{tabular}{ll}
+\(\Omega\) & Sample space \\
+\(\varnothing\) & Empty event \\
+\(\in\) & Belongs to \\
+\(\notin\) & Does not belong to \\
+\(\subseteq\) & Subset of \\
+\(\supseteq\) & Superset of \\
+\(\cup\) & Union \\
+\(\cap\) & Intersection \\
+\(A^c\) & Complement of \(A\) \\
+\end{tabular}
+\end{center}
+
+\section*{Chapter 5: Conditional Probability and Stochastic Independence}
+
+\section*{5.1 Conditional Probability.}
+
+
+
+\end{document}
