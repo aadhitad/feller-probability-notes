@@ -790,6 +790,116 @@ P(A \cup B \cup C)
 \section*{Chapter 5: Conditional Probability and Stochastic Independence}
 
 \section*{5.1 Conditional Probability.}
+\textbf{Definition.}
+Let H be an event with positive probability (non zero and positive). Then we can write for an arbitrary event A we can write 
+
+\begin{equation}
+P(A \mid H)=\frac{P(AH)}{P(H)}.
+\end{equation}
+
+This is called the conditional probability A on hypothesis H. 
+
+\textbf{Example.}
+Consider a population of N people including $N_A$ colorblind people and $N_H$ females. Restricting ourself to the female population then the person that is colorblind is $N_HA$/$N_H$. 
+
+Once we restrict the population our sample space becomes the new number. 
+
+\textbf{Thoughts.}
+Conditional probability means that we assume the event \(H\) has already
+occurred and restrict our sample space to outcomes in \(H\). We then
+compute the probability that \(A\) also occurs within this reduced sample
+space.
+
+\textbf{Note.} All general theorems on probabilities are valid also for conditional probabilities with respect to any particular hypothesis H. 
+
+Equation 1.4: Conditional union rule
+\[P(A \cup B \mid H) = P(A \mid H) + P(B \mid H) - P(AB)\]
+
+This is just normal inclusion exclusion formula but assuming H is true. Given H has happened, what is the probability that A or B happens?
+
+Equation 1.5: 
+\[P(AH) = P(A \mid H)\,P(H)\]
+
+Definition of conditional probability rearranged.
+
+Equation 1.6
+\[P(ABC) = P(A \mid BC)\,P(B \mid C)\,P(C)\]
+
+Breaks a joint probability into step-by-step conditional probabilities.
+
+
+Equation 1.7: 
+\[A = AH_1 \cup AH_2 \cup \cdots \cup AH_n\]
+
+Event A is split into cases depending on which hypothesis $H_j$ happens.
+
+Equation 1.8:
+\[P(A) = \sum_j P(A \mid H_j)\,P(H_j)\]
+
+To find P(A), average over all possible cases $H_j$ weighted by how likely each case is.
+
+\textbf{Definition.}
+Random sampling: Whatever the first $r$ choices, at the $(r+1)$st step each of the remaining $n-r$ elements has probability $1/(n-r)$ to be chosen.
+
+Meaning a sample is random if, at every stage of the drawing process, all remaining objects are equally likely to be chosen next.
+
+\textbf{Example: Four Balls in Four Cells.}
+
+Four balls are placed successively into four cells, all \(4^4\)
+arrangements being equally probable.
+
+Let \(H\) be the event that the first two balls are in different cells,
+and let \(A\) be the event that one cell contains exactly three balls.
+
+Given \(H\), the event \(A\) can occur in two ways. Therefore
+
+\[
+P(A \mid H)
+=
+2 \cdot 4^{-2}
+=
+\frac18.
+\]
+
+\textbf{Example: Stratified Populations.}
+
+Suppose a population consists of strata
+
+\[
+H_1,H_2,\ldots,H_n.
+\]
+
+Let
+
+\[
+p_i=P(H_i)
+\]
+
+be the probability that an individual belongs to \(H_i\), and let
+
+\[
+q_i=P(A\mid H_i)
+\]
+
+be the conditional probability of an event \(A\) within the stratum
+\(H_i\).
+
+Then
+
+\[
+P(A)
+=
+p_1q_1+p_2q_2+\cdots+p_nq_n.
+\]
+
+Furthermore,
+
+\[
+P(H_j\mid A)
+=
+\frac{p_jq_j}
+     {p_1q_1+p_2q_2+\cdots+p_nq_n}.
+\]
 
 
 
