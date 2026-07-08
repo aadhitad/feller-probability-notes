@@ -4,7 +4,7 @@ This repository contains my self-study notes based on *An Introduction to Probab
 
 The document is organized as a single LaTeX manuscript that compiles key definitions, concepts, derivations, observations, and selected exercise solutions developed while working through the text. The goal is to build both a personal reference and a record of mathematical progress through the material.
 
-## 🎯 Current Document Progress
+## Current Document Progress
 
 ### Section 1: The Sample Space (Chapter 1)
 
@@ -24,6 +24,6 @@ The document is organized as a single LaTeX manuscript that compiles key definit
 
 **Status:** Planned
 
-## 🛠️ How to Compile
+## How to Compile
 
 The master file `feller_probability_notes.tex` uses standard mathematical typesetting packages including `amsmath`, `amssymb`, and `amsthm`. It can be compiled using any standard LaTeX engine (PDFLaTeX, XeLaTeX, or LuaLaTeX) and can also be built directly in Overleaf.
