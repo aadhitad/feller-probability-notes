@@ -1,4 +1,4 @@
-# Comprehensive Notes on William Feller's Probability Theory
+# A Basic Understanding of Probability through William Feller's Probability Theory
 
 This repository contains my self-study notes based on *An Introduction to Probability Theory and Its Applications* (Volume 1) by William Feller.
 
