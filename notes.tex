@@ -901,6 +901,561 @@ P(H_j\mid A)
      {p_1q_1+p_2q_2+\cdots+p_nq_n}.
 \]
 
+\section*{5.2 Probabilites Defined by Conditional Probabilites. Urn Models.}
+
+In many applications, the conditional probabilities are known first and the
+probabilities of the sample space are derived from them. Thus a probability
+model can often be completely specified by describing conditional
+probabilities rather than assigning probabilities directly to all sample
+points.
+
+\textbf{Example 1: Repeated Games.}
+
+Consider the game with players $a$, $b$, and $c$ where each game is won by
+either participant with probability $\frac12$.
+
+If a sample point contains $r$ letters (that is, the game lasts $r$ rounds),
+then its probability is
+
+\[
+\left(\frac12\right)^r = 2^{-r}.
+\]
+
+For example,
+
+\[
+P(acc)=\left(\frac12\right)^3=\frac18,
+\]
+
+and
+
+\[
+P(acbb)=\left(\frac12\right)^4=\frac1{16}.
+\]
+
+Thus the probability of an outcome is determined by the conditional
+probability $\frac12$ of winning each round.
+
+\textbf{Example 2: Families and Stratified Populations.}
+
+Let $p_k$ be the probability that a family has exactly $k$ children, where
+
+\[
+\sum_{k=0}^{\infty} p_k = 1.
+\]
+
+For a family with $n$ children, each of the $2^n$ possible boy-girl
+arrangements is assumed equally likely. Hence each arrangement has
+conditional probability
+
+\[
+2^{-n}.
+\]
+
+For example, if a family has two children, the outcomes
+
+\[
+bb,\ bg,\ gb,\ gg
+\]
+
+each have probability
+
+\[
+\frac14.
+\]
+
+Let
+
+\[
+A=\{\text{family has boys but no girls}\}.
+\]
+
+Then
+
+\[
+P(A)
+=
+p_1 2^{-1}
++
+p_2 2^{-2}
++
+p_3 2^{-3}
++\cdots.
+\]
+
+This illustrates the idea of a \emph{stratified population}: the population
+is divided into strata according to family size, and probabilities are
+computed by combining the probability of belonging to a stratum with the
+conditional probability within that stratum.
+
+\textbf{Definition.}
+Urn Models: Urn contains b black balls and r red balls. A ball is drawn at random. Then is replaced and moreover c balls of color is added and d balls of the opposite color are added. A new random drawing is made from this urn which has the composition (b+r+c+d balls). 
+C and d are arbitraty integers and so they can be negative or 0 which would mean this model would terminate after (r+b) steps.
+
+If we choose a black ball in the first draw that has the probability of b/(b+r), since b+r is the total number of balls so the number of black balls out of the total is that formula.
+
+Since in this situation we chose the black ball that means we replace it and also add c balls of black color and add d balls of red color. Thus the chances of drawing the black ball now become (b+c)/(b+r+c+d). 
+
+Now if we want the probability of black, black (so black being picked 2 rounds in a row) we get the formula 
+\[\frac{b}{b+r} \cdot \frac{b+c}{b+r+c+d}\]
+
+In the same way so it continues if we want the sequence black, black, black then we multiply the above formula by (b+2c)/(b+r+2c+2d). 
+
+Polya's Urn Scheme: Consider the same urn. Now if we draw a ball of one color then the balls of that color are increased and the balls of the opposite color stay the same. Drawing one color increases the probability of it being drawn in the next drawing. 
+This is rough model of phenomenon such as contagious diseases. One occurance increases the probability of further occurances. 
+
+\[
+\frac{
+b(b+c)(b+2c)\cdots(b+n_1c-c)\cdot
+r(r+c)\cdots(r+n_2c-c)
+}{
+(b+r)(b+r+c)(b+r+2c)\cdots(b+r+nc-c)
+}.
+\]
+
+The numerator is for each probability of each drawing and with every draw the probability of the same color increases thus +c is added to every draw. The last term $b+n_1c-c$
+The denominator steadily increases by c every draw.  
+
+Now if we consider a different order where $n_1$ black balls and $n_2$ red balls was in a different ordering. The terms in the above formula would remain the same but occur in a different order. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Tangent: Counting Principles}
+
+Many probability formulas arise from counting the number of possible
+outcomes. Before studying probability distributions and urn models,
+it is useful to understand the basic principles of combinatorics.
+
+\subsection*{1. The Multiplication Principle}
+
+The total number of possible outcomes is the product of the choices at
+each step.
+
+For example, if there are four pairs of pants and three shirts, then the
+number of possible outfits is
+
+\[
+4\times3=12.
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{2. Factorials}
+
+Factorials count the number of ways to arrange distinct objects.
+
+\[
+n!=n(n-1)(n-2)\cdots2\cdot1.
+\]
+
+For example,
+
+\[
+4!=4\cdot3\cdot2\cdot1=24,
+\]
+
+meaning four distinct books can be arranged on a shelf in 24 different
+ways.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{3. Permutations}
+
+A \textbf{permutation} is an arrangement of objects where the
+\textbf{order matters}. Changing the order creates a different
+arrangement.
+
+For example, suppose we have the three letters
+
+\[
+A,\;B,\;C.
+\]
+
+The possible arrangements are
+
+\[
+ABC,\;
+ACB,\;
+BAC,\;
+BCA,\;
+CAB,\;
+CBA.
+\]
+
+Instead of listing every possibility, we count them.
+
+The first position has $3$ choices.
+
+The second position has $2$ remaining choices.
+
+The last position has only $1$ choice.
+
+By the multiplication principle,
+
+\[
+3\times2\times1=6.
+\]
+
+Thus,
+
+\[
+3!=6.
+\]
+
+In general,
+
+\[
+n!
+\]
+
+arranges $n$ distinct objects.
+
+\bigskip
+
+\textbf{Example.}
+
+Suppose five students are available and we wish to assign a president,
+vice-president, and secretary.
+
+Since changing the positions changes the outcome, the order matters.
+
+There are
+
+\[
+5\times4\times3=60
+\]
+
+possible assignments.
+
+In general,
+
+\[
+P(n,r)=\frac{n!}{(n-r)!}
+\]
+
+counts the number of permutations of $r$ objects selected from $n$
+distinct objects.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{4. Combinations}
+
+A \textbf{combination} is a selection of objects where the
+\textbf{order does not matter}.
+
+Suppose five students
+
+\[
+A,\;B,\;C,\;D,\;E
+\]
+
+are available and we wish to choose a committee of two students.
+
+The committee
+
+\[
+A,B
+\]
+
+is exactly the same committee as
+
+\[
+B,A,
+\]
+
+so we count it only once.
+
+The number of ways to choose $k$ objects from $n$ objects is written
+
+\[
+\binom nk,
+\]
+
+which is read as ``$n$ choose $k$.''
+
+\bigskip
+
+\textbf{Example.}
+
+Choosing two students from five gives
+
+\[
+AB,\;
+AC,\;
+AD,\;
+AE,\;
+BC,\;
+BD,\;
+BE,\;
+CD,\;
+CE,\;
+DE.
+\]
+
+Hence,
+
+\[
+\binom52=10.
+\]
+
+\bigskip
+
+\textbf{Why does the formula work?}
+
+First count every ordered selection of two students.
+
+There are
+
+\[
+5\times4
+=
+\frac{5!}{3!}
+\]
+
+ordered selections.
+
+However,
+
+\[
+AB
+\]
+
+and
+
+\[
+BA
+\]
+
+represent the same committee.
+
+Thus every committee has been counted
+
+\[
+2!
+\]
+
+times.
+
+Therefore,
+
+\[
+\binom nk
+=
+\frac{n!}{k!(n-k)!}.
+\]
+
+This is one of the fundamental counting formulas used throughout
+probability.
+
+\bigskip
+
+\textbf{Example.}
+
+The number of poker hands consisting of five cards is
+
+\[
+\binom{52}{5},
+\]
+
+because only the cards matter, not the order in which they are dealt.
+
+Likewise, the number of ways to obtain exactly three heads in five coin
+tosses is
+
+\[
+\binom53,
+\]
+
+since we are simply choosing which three positions contain heads.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Application to Pólya's Urn Scheme}
+
+Equation (2.3) computes the probability of one
+\textbf{specific sequence of draws}.
+
+For example, if
+
+\[
+n_1=2,\qquad n_2=1,
+\]
+
+then Equation (2.3) gives the probability of the sequence
+
+\[
+BBR.
+\]
+
+However, the event
+
+\[
+\text{``exactly two black draws and one red draw''}
+\]
+
+includes every ordering of these draws:
+
+\[
+BBR,\qquad
+BRB,\qquad
+RBB.
+\]
+
+Under Pólya's urn scheme, every sequence containing the same numbers of
+black and red draws has the same probability.
+
+Therefore we compute
+
+\[
+\text{Probability of one sequence}
+\times
+\text{Number of possible sequences}.
+\]
+
+The number of possible sequences is
+
+\[
+\binom{n}{n_1},
+\]
+
+where
+
+\begin{itemize}
+    \item $n$ is the total number of draws,
+    \item $n_1$ is the number of black draws,
+    \item $n_2=n-n_1$ is the number of red draws.
+\end{itemize}
+
+Hence,
+
+\[
+P(\text{exactly }n_1\text{ black and }n_2\text{ red})
+=
+\binom{n}{n_1}
+P(\text{one specific ordering}).
+\]
+
+This is precisely the step from Equation (2.3) to Equation (2.4).
+
+\bigskip
+
+Feller then rewrites the long product from Equation (2.3) using
+\textbf{generalized binomial coefficients}, whose upper entries need not
+be integers.
+
+This gives the compact formula
+
+\[
+p_{n_1,n}
+=
+\frac{
+\binom{n_1-1+b/c}{n_1}
+\binom{n_2-1+r/c}{n_2}
+}{
+\binom{n-1+(b+r)/c}{n}
+}.
+\tag{2.4}
+\]
+
+Although the notation appears more complicated, it is simply a shorter
+way of writing the long products from Equation (2.3).
+
+\bigskip
+
+\textbf{Main Takeaway}
+
+Whenever a probability problem asks only for the \emph{number} of
+occurrences of an event, rather than the exact order in which they
+occur, the strategy is:
+
+\begin{enumerate}
+    \item Compute the probability of one specific ordering.
+    \item Count how many orderings produce the same outcome using a
+          binomial coefficient.
+    \item Multiply the two quantities together.
+\end{enumerate}
+
+This idea appears repeatedly throughout probability theory and is the
+key step connecting Equations (2.3) and (2.4).
+
+\[
+\boxed{
+\text{Probability of one ordering}
+\times
+\text{Number of orderings}
+=
+\text{Probability of the event}.
+}
+\]
+
+\textbf{Remark.}
+Conditional probability can change because learning new information changes
+our beliefs, even when the underlying process itself has not changed.
+This is an important distinction between \emph{conditioning} and
+\emph{causation}.
+
+\section{Conditional Probability and Bayes' Rule}
+
+\subsection*{Definition: Conditional Probability}
+
+If $A$ and $B$ are events with $P(A)>0$, then
+
+\[
+P(B\mid A)=\frac{P(A\cap B)}{P(A)}.
+\]
+
+\vspace{0.5em}
+
+\subsection*{Theorem: Law of Total Probability}
+
+Let $H_1,H_2,\ldots,H_r$ be a partition of the sample space, i.e.,
+\begin{itemize}
+    \item $H_i\cap H_j=\varnothing$ for $i\neq j$,
+    \item $\displaystyle \bigcup_{i=1}^r H_i=\Omega$.
+\end{itemize}
+
+Then, for any event $A$,
+
+\[
+P(A)=\sum_{i=1}^{r} P(A\mid H_i)\,P(H_i).
+\]
+
+\vspace{0.5em}
+
+\subsection*{Theorem: Bayes' Rule}
+
+Under the same assumptions,
+
+\[
+P(H_i\mid A)
+=
+\frac{P(A\mid H_i)\,P(H_i)}
+{\displaystyle\sum_{j=1}^{r} P(A\mid H_j)\,P(H_j)}.
+\]
+
+\vspace{0.5em}
+
+\subsection*{Proof Idea}
+
+Starting from the definition of conditional probability,
+
+\[
+P(H_i\mid A)=\frac{P(H_i\cap A)}{P(A)}.
+\]
+
+Use
+
+\[
+P(H_i\cap A)=P(A\mid H_i)P(H_i),
+\]
+
+and apply the Law of Total Probability,
+
+\[
+P(A)=\sum_{j=1}^{r} P(A\mid H_j)P(H_j),
+\]
+
+to obtain Bayes' Rule.
+
+\section*{5.3 Stochastic Independence.}
 
 
 \end{document}
